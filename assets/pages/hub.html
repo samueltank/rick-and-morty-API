@@ -34,8 +34,18 @@
       defer="defer"
     ></script>
 
-    <script src="../modules/api/dist/request.js" defer="defer"></script>
-    <script src="../modules/api/dist/episodes.js" defer="defer"></script>
+    <script
+      src="../modules/api/dist/modules/api/request.js"
+      defer="defer"
+    ></script>
+    <script
+      src="../modules/api/dist/modules/api/episodes.js"
+      defer="defer"
+    ></script>
+    <script
+      src="../modules/api/dist/styles/style-script/scrolling.js"
+      defer="defer"
+    ></script>
 
     <title>Rick and Morty API - Hub</title>
   </head>
@@ -64,7 +74,7 @@
               <h2>characters Wiki</h2>
             </div>
           </div>
-          
+
           <div class="nav-search-bar-container">
             <nav id="hub-nav-bar" class="hub-nav-bar">
               <ul id="nav-options-list" class="nav-options-list">
@@ -72,10 +82,10 @@
                 <li class="nav-item"><a href="#">hub</a></li>
               </ul>
             </nav>
-  
+
             <div id="search-bar" class="search-bar">
               <select name="episode-select" class="episode-select">
-                <option value="">ep.</option>
+                <option value="">Selecione o Episodio</option>
               </select>
             </div>
           </div>
@@ -85,6 +95,7 @@
           <h1 class="title-main-content">episodes</h1>
           <!-- after e before para setas -->
           <div class="carousel-epi-container">
+            <div class="btn-left"></div>
             <div class="carousel-itens-container">
               <div class="all-itens-container">
                 <article class="item">
@@ -120,6 +131,7 @@
                 </article>
               </div>
             </div>
+            <div class="btn-right"></div>
           </div>
 
           <!-- bolinhas de fundo -->
