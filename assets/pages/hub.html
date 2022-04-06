@@ -34,14 +34,8 @@
       defer="defer"
     ></script>
 
-    <script
-      src="../modules/api/dist/request.js"
-      defer="defer"
-    ></script>
-    <script
-      src="../modules/api/dist/episodes.js"
-      defer="defer"
-    ></script>
+    <script src="../modules/api/dist/request.js" defer="defer"></script>
+    <script src="../modules/api/dist/episodes.js" defer="defer"></script>
 
     <title>Rick and Morty API - Hub</title>
   </head>
@@ -62,36 +56,76 @@
 
             <div class="text-logo-container">
               <!-- item decorativo -->
-              <img src="../../assets/imgs/Rick_and_Morty.svg" alt="" />
+              <img
+                src="../../assets/imgs/Rick_and_Morty.svg"
+                id="img-text-logo"
+                alt=""
+              />
               <h2>characters Wiki</h2>
             </div>
           </div>
-
-          <nav id="hub-nav-bar" class="hub-nav-bar">
-            <ul id="nav-options-list" class="nav-options-list">
-              <li class="nav-item"><a href="#">home</a></li>
-              <li class="nav-item"><a href="#">hub</a></li>
-              <li class="nav-item"><a href="#">all chars</a></li>
-            </ul>
-          </nav>
-
-          <div id="search-bar" class="search-bar">
-            <select name="episode-select" id="episode-select">
-              <option value="">select</option>
-            </select>
-            <div class="icon-container">
-              <i class="fa-solid fa-angle-down"></i>
+          
+          <div class="nav-search-bar-container">
+            <nav id="hub-nav-bar" class="hub-nav-bar">
+              <ul id="nav-options-list" class="nav-options-list">
+                <li class="nav-item"><a href="#">home</a></li>
+                <li class="nav-item"><a href="#">hub</a></li>
+              </ul>
+            </nav>
+  
+            <div id="search-bar" class="search-bar">
+              <select name="episode-select" class="episode-select">
+                <option value="">ep.</option>
+              </select>
             </div>
           </div>
         </header>
 
         <div id="main-content" class="main-content">
+          <h1 class="title-main-content">episodes</h1>
+          <!-- after e before para setas -->
           <div class="carousel-epi-container">
-            <div class="caousel-item">
-              <!-- gif in background -->
-              <span></span>
+            <div class="carousel-itens-container">
+              <div class="all-itens-container">
+                <article class="item">
+                  <span class="number-episode">1</span>
+                </article>
+
+                <article class="item">
+                  <span class="number-episode">1</span>
+                </article>
+
+                <article class="item">
+                  <span class="number-episode">1</span>
+                </article>
+
+                <article class="item">
+                  <span class="number-episode">1</span>
+                </article>
+
+                <article class="item">
+                  <span class="number-episode">1</span>
+                </article>
+
+                <article class="item">
+                  <span class="number-episode">1</span>
+                </article>
+
+                <article class="item">
+                  <span class="number-episode">1</span>
+                </article>
+
+                <article class="item">
+                  <span class="number-episode">1</span>
+                </article>
+              </div>
             </div>
           </div>
+
+          <!-- bolinhas de fundo -->
+          <ul class="white-starts">
+            <!-- li(stars) geradas por JS -->
+          </ul>
         </div>
       </section>
     </main>

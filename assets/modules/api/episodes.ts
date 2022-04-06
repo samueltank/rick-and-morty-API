@@ -29,7 +29,7 @@ try {
   .then(body => { 
     console.log(body.parsedBody?.info.pages);
     response = body;
-    console.log(response.parsedBody?.results)
+    console.log(response.parsedBody?.results[1].characters)
   });
 } catch (error) {
   console.log("Connect Error", error);
