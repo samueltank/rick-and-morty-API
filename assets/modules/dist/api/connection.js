@@ -1,5 +1,5 @@
 "use strict";
-class FetchApi {
+export class FetchApi {
     constructor(url) {
         this._url = url;
     }

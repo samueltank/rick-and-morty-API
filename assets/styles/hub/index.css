@@ -183,7 +183,7 @@ section {
   height: 4em;
 
   background: url("../../imgs/angle_left_solid.svg") transparent center/contain
-  no-repeat;
+    no-repeat;
 
   border-radius: 50%;
 
@@ -243,8 +243,8 @@ section {
 
   cursor: pointer;
 
-  background: url("../../imgs/portal_rick_and_morty.gif") transparent
-   20% 30% / 90% border-box no-repeat;
+  background: url("../../imgs/portal_rick_and_morty.gif") transparent 20% 30% /
+    90% border-box no-repeat;
 }
 
 .all-itens-container > .item > .number-episode {

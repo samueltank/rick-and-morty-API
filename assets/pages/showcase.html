@@ -33,15 +33,15 @@
       crossorigin="anonymous"
       defer="defer"
     ></script>
-
+    <!-- API scripts -->
     <script
-      src="../modules/api/dist/modules/api/request.js"
+      type="module"
+      src="../modules/dist/api/character.js"
       defer="defer"
     ></script>
-    <script
-      src="../modules/api/dist/modules/api/episodes.js"
-      defer="defer"
-    ></script>
+    <!-- style scripts -->
+    <script src="../modules/dist/styles/click-hover.js" defer="defer"></script>
+    <script src="../modules/dist/styles/scrolling.js" defer="defer"></script>
 
     <title>Rick and Morty API - Hub</title>
   </head>
@@ -74,14 +74,15 @@
           <div class="nav-search-bar-container">
             <nav id="hub-nav-bar" class="hub-nav-bar">
               <ul id="nav-options-list" class="nav-options-list">
-                <li class="nav-item"><a href="#">home</a></li>
-                <li class="nav-item"><a href="#">hub</a></li>
+                <li class="nav-item"><a href="../../index.html">home</a></li>
+                <li class="nav-item"><a href="./showcase.html">showcase</a></li>
+                <li class="nav-item"><a href="./hub.html">hub</a></li>
               </ul>
             </nav>
 
             <div id="search-bar" class="search-bar">
               <select name="episode-select" class="episode-select">
-                <option value="">Selecione o Episodio</option>
+                <option value="" hidden="hidden">episode</option>
               </select>
             </div>
           </div>
@@ -98,9 +99,10 @@
                 <div class="front">
                   <!-- imagem do personagem, proveniente da API -->
                   <img
-                    src="../../assets/imgs/style_rick.png"
+                    src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
                     width="50"
                     alt=""
+                    id="img-front-card"
                   />
                 </div>
 
@@ -108,405 +110,18 @@
                   <!-- status do personagem -->
                   <h3 class="title-card">Rick Sanchez</h3>
                   <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <!-- imagem do personagem, proveniente da API -->
-                  <img
-                    src="../../assets/imgs/style_rick.png"
-                    width="50"
-                    alt=""
-                  />
-                </div>
-
-                <div class="back">
-                  <!-- status do personagem -->
-                  <h3 class="title-card">Rick Sanchez</h3>
-                  <div class="infos-container">
-                    <div class="titles-container">
-                      <span>status:</span>
-                      <span>species:</span>
-                      <span>gender:</span>
-                      <span>origin:</span>
-                      <span>location:</span>
-                    </div>
-
-                    <div class="title-content-container">
-                      <span>Alive</span>
-                      <span>Human</span>
-                      <span>Male</span>
-                      <span>Earth&nbsp;(C-137)</span>
-                      <span>Citadel&nbsp;of&nbsp;Ricks</span>
+                    <!-- todo: descrever as características do personagem -->
+                    <div class="info">
+                      status <br />
+                      <span>Aline</span><br />
+                      species <br />
+                      <span>Human</span><br />
+                      type <br />
+                      <span>Undefined</span><br />
+                      gender <br />
+                      <span>Male</span><br />
+                      origin <br />
+                      <span>Earth (C-137)</span>
                     </div>
                   </div>
                 </div>

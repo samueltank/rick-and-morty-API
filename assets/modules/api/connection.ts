@@ -1,10 +1,12 @@
-"use strict"; 
+"use strict";
+ 
+/* arquivo base para consumo e tipagem de corpo JSON */
 
-interface IHttpResponse<T> extends Response {
+export interface IHttpResponse<T> extends Response {
   parsedBody?: T;
 }
 
-class FetchApi {
+export class FetchApi {
   private readonly _url: RequestInfo;
 
   public constructor(url: RequestInfo) {

@@ -1,6 +1,6 @@
 "use strict";
 
-const container: Element | null = document.querySelector(
+const container: HTMLElement | null = document.querySelector(
   ".carousel-itens-container"
 );
 const btnLeft: Element | null = document.querySelector(
