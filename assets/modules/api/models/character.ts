@@ -1,6 +1,6 @@
 "use strict";
 
-import { FetchApi, IHttpResponse } from "./connection.js";
+import { FetchApi, IHttpResponse } from "./model.js";
 import { validateNotUndefined, Episode } from "./episode.js";
 
 interface Icharacter {
@@ -31,7 +31,7 @@ export class Character extends Episode {
     const episode = await this.getEpisodeById(id);
     const allChars = episode.characters;
 
-    return validateNotUndefined<RequestInfo[]>(allChars);
+    return allChars;
   }
 
   public async getAllCharacters(episode: number) {

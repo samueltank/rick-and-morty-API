@@ -1,5 +1,5 @@
 "use strict";
-import { FetchApi } from "./connection.js";
+import { FetchApi } from "./model.js";
 // função para validação de retorno correto:
 export const validateNotUndefined = async function (value) {
     if (value !== undefined) {
@@ -41,16 +41,11 @@ export class Episode {
         let arrPag = [];
         for (let i = 1; i <= pages; i++) {
             const page = await this.getPageByNumber(i);
-            if (page !== undefined) {
-                arrPag.push(page);
-            }
-            else {
-                throw new Error("Variável undefined!");
-            }
+            arrPag.push(page);
         }
         if (Array.isArray(arrPag)) {
             const bigPromise = await Promise.all(arrPag);
-            return validateNotUndefined(bigPromise);
+            return bigPromise;
         }
         else {
             throw new Error("variável não é um array!");
@@ -65,7 +60,7 @@ export class Episode {
         const resolve = await this.getAllPagesPromise();
         const allArr = resolve.map(item => { return item.results; });
         const allEpisodes = allArr.flat();
-        return validateNotUndefined(allEpisodes);
+        return allEpisodes;
     }
 }
 Episode._url = "https://rickandmortyapi.com/api/episode";

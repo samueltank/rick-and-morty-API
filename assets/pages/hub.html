@@ -33,7 +33,14 @@
       crossorigin="anonymous"
       defer="defer"
     ></script>
+    <!-- API scripts -->
+    <script 
+      type="module" 
+      src="../modules//dist//api/main-hub.js" 
+      defer="defer"
+    ></script>
 
+    <!-- style scripts -->
     <script src="../modules/dist/styles/scrolling.js" defer="defer"></script>
     <script src="../modules/dist/styles/starts.js" defer="defer"></script>
 
@@ -69,17 +76,8 @@
             <nav id="hub-nav-bar" class="hub-nav-bar">
               <ul id="nav-options-list" class="nav-options-list">
                 <li class="nav-item"><a href="../../index.html">home</a></li>
-                <li class="nav-item"><a href="./showcase.html">showcase</a></li>
-                <li class="nav-item"><a href="./hub.html">hub</a></li>
               </ul>
             </nav>
-
-            <div id="search-bar" class="search-bar">
-              <select name="episode-select" class="episode-select">
-                <option value="">Selecione o Episodio</option>
-              </select>
-            </div>
-          </div>
         </header>
 
         <div id="main-content" class="main-content">
@@ -88,39 +86,7 @@
           <div class="carousel-epi-container">
             <div class="btn-left"></div>
             <div class="carousel-itens-container">
-              <div class="all-itens-container">
-                <article class="item">
-                  <span class="number-episode">1</span>
-                </article>
-
-                <article class="item">
-                  <span class="number-episode">1</span>
-                </article>
-
-                <article class="item">
-                  <span class="number-episode">1</span>
-                </article>
-
-                <article class="item">
-                  <span class="number-episode">1</span>
-                </article>
-
-                <article class="item">
-                  <span class="number-episode">1</span>
-                </article>
-
-                <article class="item">
-                  <span class="number-episode">1</span>
-                </article>
-
-                <article class="item">
-                  <span class="number-episode">1</span>
-                </article>
-
-                <article class="item">
-                  <span class="number-episode">1</span>
-                </article>
-              </div>
+              <div class="all-itens-container"></div>
             </div>
             <div class="btn-right"></div>
           </div>

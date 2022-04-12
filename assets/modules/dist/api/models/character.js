@@ -1,6 +1,6 @@
 "use strict";
-import { FetchApi } from "./connection.js";
-import { validateNotUndefined, Episode } from "./episode.js";
+import { FetchApi } from "./model.js";
+import { Episode } from "./episode.js";
 export class Character extends Episode {
     constructor() {
         super();
@@ -12,7 +12,7 @@ export class Character extends Episode {
     async getAllCharactersPerEpisode(id) {
         const episode = await this.getEpisodeById(id);
         const allChars = episode.characters;
-        return validateNotUndefined(allChars);
+        return allChars;
     }
     async getAllCharacters(episode) {
         const arrLinks = await this.getAllCharactersPerEpisode(episode);

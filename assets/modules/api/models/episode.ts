@@ -1,6 +1,6 @@
 "use strict";
 
-import { IHttpResponse, FetchApi } from "./connection.js";
+import { IHttpResponse, FetchApi } from "./model.js";
 
 /* Data: 10/04/2022;
  * Autor: Samuel Tank;
@@ -60,7 +60,7 @@ export class Episode {
   public async getPageNumberPromise(): Promise<number> {
     const response = (await this.getBodyJson()).parsedBody?.info.pages;
 
-    return validateNotUndefined(response);
+    return validateNotUndefined<number>(response);
   }
 
   public async getEpisodeById(id: number): Promise<IresultsPage> {
@@ -86,17 +86,12 @@ export class Episode {
 
     for (let i = 1; i <= pages; i++) {
       const page = await this.getPageByNumber(i);
-      if (page !== undefined) {
-        arrPag.push(page);
-      } else {
-        throw new Error("Variável undefined!");
-      }
+      arrPag.push(page);
     }
 
     if (Array.isArray(arrPag)) {
       const bigPromise = await Promise.all(arrPag);
-
-      return validateNotUndefined<IPageDataEpisode[]>(bigPromise);
+      return bigPromise;
     } else {
       throw new Error("variável não é um array!");
     }
@@ -106,7 +101,7 @@ export class Episode {
     const fetch = (await this._fetch.getBodyJSON<IPageDataEpisode>()).parsedBody
       ?.info.count;
 
-    return validateNotUndefined<number | Promise<number>>(fetch);
+    return validateNotUndefined<number>(fetch);
   }
 
   public async getAllEpisodes(): Promise<IresultsPage[]> {
@@ -114,6 +109,6 @@ export class Episode {
     const allArr = resolve.map(item => { return item.results }); 
     const allEpisodes = allArr.flat();
 
-    return validateNotUndefined(allEpisodes);
+    return allEpisodes;
   }
 }

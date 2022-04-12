@@ -30,6 +30,8 @@ section {
   height: 6rem;
   width: 100%;
 
+  padding: 0.5em;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -99,8 +101,10 @@ section {
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1em;
+  justify-content: flex-end;
+  gap: 1.5em;
+
+  padding-right: 1rem;
 }
 
 .hub-nav-bar > .nav-options-list > li {
@@ -114,35 +118,6 @@ section {
 
 .hub-nav-bar > .nav-options-list > li > a {
   text-decoration: none;
-}
-
-.search-bar {
-  width: 25%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.episode-select {
-  min-width: 4rem;
-  width: 60%;
-  height: 3em;
-
-  border-radius: 2em;
-  border: 3px solid #4e0dda;
-  outline: none;
-
-  padding-left: 1em;
-
-  cursor: pointer;
-}
-
-.episode-select > option {
-  color: rgba(0, 0, 0, 0.67);
-  font-size: 1.2rem;
-  font-weight: 500;
 }
 
 /* conteúdo principal */
