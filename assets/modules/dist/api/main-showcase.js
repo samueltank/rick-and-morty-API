@@ -1,6 +1,7 @@
 "use strict";
 import { Episode } from "../api/models/episode.js";
 import { Character } from "../api/models/character.js";
+import { addLink } from "../styles/click-hover.js";
 // função para criação de lista numérica para select:
 const applyEpisodeList = async function (selector) {
     const episode = new Episode();
@@ -29,12 +30,13 @@ const getEpisodeByQuery = function () {
 };
 const creatCards = async function () {
     const episode = getEpisodeByQuery();
+    console.log(episode);
     const characters = new Character();
     let arrCards;
     if (episode != null) {
         const chars = await characters.getAllCharacters(episode);
         if (chars != undefined) {
-            arrCards = chars.map(element => {
+            arrCards = chars.map((element) => {
                 const div = document.createElement("div");
                 div.className = "flip-container";
                 div.innerHTML = `
@@ -70,12 +72,27 @@ const creatCards = async function () {
         </div>
       </div>
         `;
+                return div;
             });
+            return arrCards;
         }
     }
-    return arrCards;
 };
 const applyCard = async function () {
     const container = document.querySelector(".container-cards");
     const arrCards = await creatCards();
+    console.log(arrCards);
+    arrCards === null || arrCards === void 0 ? void 0 : arrCards.map((element) => {
+        container === null || container === void 0 ? void 0 : container.appendChild(element);
+    });
 };
+applyCard();
+// alterar o número do episódio:
+const applyEpisodeNumber = () => {
+    const title = document.querySelector(".main-content > .title-main-content");
+    if (title != null) {
+        title.textContent = `Episode ${getEpisodeByQuery()}`;
+    }
+};
+applyEpisodeNumber();
+addLink();

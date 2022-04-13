@@ -12,6 +12,8 @@ const applyRotate = function (element) {
         return false;
     }
 };
-flipContainer.forEach(element => {
-    element.addEventListener("click", () => applyRotate(element));
-});
+export const addLink = function () {
+    flipContainer.forEach(element => {
+        element.addEventListener("click", () => applyRotate(element));
+    });
+};

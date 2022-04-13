@@ -2,7 +2,7 @@
 
 import { Episode } from "../api/models/episode.js";
 import { Character } from "../api/models/character.js";
-import { Console } from "console";
+import { addLink } from "../styles/click-hover.js";
 
 // função para criação de lista numérica para select:
 const applyEpisodeList = async function (selector: string) {
@@ -22,34 +22,33 @@ const applyEpisodeList = async function (selector: string) {
   }
 };
 
-{ await applyEpisodeList(".opt-group"); }
+{
+  await applyEpisodeList(".opt-group");
+}
 
 // criação dos cards:
 
 // pegar número do episodeo pela string query:
 const getEpisodeByQuery = function (): string | null {
-  
-  const urlParams = new URLSearchParams(
-    window.location.search
-  );
+  const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("episode");
-  
+
   return myParam;
-} 
+};
 
 const creatCards = async function () {
-  const episode    = getEpisodeByQuery();
+  const episode = getEpisodeByQuery();
+
+  console.log(episode)
   const characters = new Character();
-  let arrCards;
+  let arrCards: HTMLElement[];
 
   if (episode != null) {
-    const chars = await characters.getAllCharacters(
-      episode
-    );
-    
+    const chars = await characters.getAllCharacters(episode);
+
     if (chars != undefined) {
-      arrCards = chars.map(element => {
-        const div = document.createElement("div");
+      arrCards = chars.map((element) => {
+        const div: HTMLElement = document.createElement("div");
         div.className = "flip-container";
         div.innerHTML = `
         <div class="flipper">
@@ -84,15 +83,36 @@ const creatCards = async function () {
         </div>
       </div>
         `;
+        return div;
       });
+
+      return arrCards;
     }
   }
+};
 
-  return arrCards;
-}
-
-const applyCard = async function () {
+const applyCard = async function (): Promise<void> {
   const container = document.querySelector(".container-cards");
   const arrCards  = await creatCards();
+  console.log(arrCards);
 
-}
+  arrCards?.map((element) => {
+    container?.appendChild(element);
+  });
+};
+
+applyCard();
+
+// alterar o número do episódio:
+
+const applyEpisodeNumber = () => {
+  const title = document.querySelector(".main-content > .title-main-content");
+  if (title != null) {
+    title.textContent = `Episode ${getEpisodeByQuery()}`;
+  }
+};
+
+applyEpisodeNumber();
+
+
+addLink();
