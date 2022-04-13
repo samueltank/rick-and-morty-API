@@ -101,7 +101,7 @@ const applyCard = async function (): Promise<void> {
   });
 };
 
-applyCard();
+await applyCard();
 
 // alterar o número do episódio:
 
@@ -115,4 +115,4 @@ const applyEpisodeNumber = () => {
 applyEpisodeNumber();
 
 
-addLink();
+addLink(); // fazer funcionar 

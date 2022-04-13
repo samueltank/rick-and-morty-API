@@ -86,7 +86,7 @@ const applyCard = async function () {
         container === null || container === void 0 ? void 0 : container.appendChild(element);
     });
 };
-applyCard();
+await applyCard();
 // alterar o número do episódio:
 const applyEpisodeNumber = () => {
     const title = document.querySelector(".main-content > .title-main-content");
@@ -95,4 +95,4 @@ const applyEpisodeNumber = () => {
     }
 };
 applyEpisodeNumber();
-addLink();
+addLink(); // fazer funcionar 
