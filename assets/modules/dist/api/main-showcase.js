@@ -30,10 +30,11 @@ const getEpisodeByQuery = function () {
 const creatCards = async function () {
     const episode = getEpisodeByQuery();
     const characters = new Character();
+    let arrCards;
     if (episode != null) {
         const chars = await characters.getAllCharacters(episode);
         if (chars != undefined) {
-            const arrCards = chars.map(element => {
+            arrCards = chars.map(element => {
                 const div = document.createElement("div");
                 div.className = "flip-container";
                 div.innerHTML = `
@@ -70,9 +71,9 @@ const creatCards = async function () {
       </div>
         `;
             });
-            return arrCards;
         }
     }
+    return arrCards;
 };
 const applyCard = async function () {
     const container = document.querySelector(".container-cards");
