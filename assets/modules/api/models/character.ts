@@ -27,14 +27,14 @@ export class Character extends Episode {
     return fetchChar.getBodyJSON<Icharacter>();
   }
 
-  public async getAllCharactersPerEpisode(id: number): Promise<RequestInfo[]> {
+  public async getAllCharactersPerEpisode(id: string): Promise<RequestInfo[]> {
     const episode = await this.getEpisodeById(id);
     const allChars = episode.characters;
 
     return allChars;
   }
 
-  public async getAllCharacters(episode: number) {
+  public async getAllCharacters(episode: string) {
     const arrLinks = await this.getAllCharactersPerEpisode(episode);
 
     // utilizar futuramente para buscar com matriz:
@@ -62,5 +62,5 @@ export class Character extends Episode {
 // testes
 
 const test = new Character();
-test.getAllCharactersPerEpisode(1).then((item) => console.log(item));
-test.getAllCharacters(1).then((item) => console.log(item));
+test.getAllCharactersPerEpisode("1").then((item) => console.log(item));
+test.getAllCharacters("1").then((item) => console.log(item));

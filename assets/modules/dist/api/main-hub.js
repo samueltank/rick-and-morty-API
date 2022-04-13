@@ -11,7 +11,6 @@ const creatPortal = async function (numEpi, parentSelector) {
     article.appendChild(span);
     if (parent instanceof HTMLElement) {
         parent.appendChild(article);
-        console.log("cheguei aqui!");
     }
     else {
         throw new Error("'parent' está nula!");
@@ -25,18 +24,22 @@ const creatAllPortals = async () => {
         creatPortal(i, ".all-itens-container");
     }
 };
-creatAllPortals();
+{
+    await creatAllPortals();
+}
 // links para cada portal:
 function linkThis() {
-    console.log("macaco de saia");
+    const index = this.children[0].textContent;
+    window.location.href = `
+    ${window.location.origin}/assets/pages/showcase.html?episode=${index}
+  `;
 }
-;
-const applylinks = async () => {
+const applylinks = function () {
     const allPortals = document.querySelectorAll(".item"); // a lista esta vazia!
-    console.log(allPortals);
-    allPortals.forEach(element => {
-        element.addEventListener("click", () => linkThis);
-        console.log(element);
+    allPortals.forEach((element) => {
+        element.addEventListener("click", linkThis);
     });
 };
-console.log("cheguei novinha!");
+{
+    applylinks();
+}

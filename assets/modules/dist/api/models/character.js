@@ -37,5 +37,5 @@ export class Character extends Episode {
 }
 // testes
 const test = new Character();
-test.getAllCharactersPerEpisode(1).then((item) => console.log(item));
-test.getAllCharacters(1).then((item) => console.log(item));
+test.getAllCharactersPerEpisode("1").then((item) => console.log(item));
+test.getAllCharacters("1").then((item) => console.log(item));

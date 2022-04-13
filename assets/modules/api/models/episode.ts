@@ -63,7 +63,7 @@ export class Episode {
     return validateNotUndefined<number>(response);
   }
 
-  public async getEpisodeById(id: number): Promise<IresultsPage> {
+  public async getEpisodeById(id: string): Promise<IresultsPage> {
     const url: RequestInfo = Episode._url + `/${id}`;
     const fetch: FetchApi = new FetchApi(url);
     const response = (await fetch.getBodyJSON<IresultsPage>()).parsedBody;
@@ -71,7 +71,7 @@ export class Episode {
     return validateNotUndefined<IresultsPage>(response);
   }
 
-  public async getPageByNumber(pageID: number): Promise<IPageDataEpisode> {
+  public async getPageByNumber(pageID: string): Promise<IPageDataEpisode> {
     const url: RequestInfo = Episode._url + `?page=${pageID}`;
     const fetch: FetchApi = new FetchApi(url);
 
@@ -85,7 +85,7 @@ export class Episode {
     let arrPag = [];
 
     for (let i = 1; i <= pages; i++) {
-      const page = await this.getPageByNumber(i);
+      const page = await this.getPageByNumber(i.toString());
       arrPag.push(page);
     }
 

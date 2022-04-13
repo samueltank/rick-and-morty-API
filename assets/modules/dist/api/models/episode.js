@@ -40,7 +40,7 @@ export class Episode {
         const pages = await this.getPageNumberPromise();
         let arrPag = [];
         for (let i = 1; i <= pages; i++) {
-            const page = await this.getPageByNumber(i);
+            const page = await this.getPageByNumber(i.toString());
             arrPag.push(page);
         }
         if (Array.isArray(arrPag)) {
