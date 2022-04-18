@@ -1,9 +1,9 @@
 "use strict";
 
 import { FetchApi, IHttpResponse } from "./model.js";
-import { validateNotUndefined, Episode } from "./episode.js";
+import { Episode } from "./episode.js";
 
-interface Icharacter {
+export interface Icharacter {
   id: number;
   name: string;
   status: string;

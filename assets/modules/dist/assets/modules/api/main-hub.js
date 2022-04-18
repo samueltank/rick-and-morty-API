@@ -30,7 +30,6 @@ const creatAllPortals = async () => {
 // links para cada portal:
 function linkThis() {
     const index = this.children[0].textContent;
-    console.log(index);
     window.location.href = `
     ${window.location.origin}/assets/pages/showcase.html?episode=${index}
   `;

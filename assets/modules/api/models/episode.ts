@@ -17,7 +17,7 @@ export interface IresultsPage {
   characters: RequestInfo[];
 }
 
-export interface IPageDataEpisode {
+export interface IPageDataEpisode extends IresultsPage {
   info: {
     count: number;
     pages: number;
@@ -80,8 +80,8 @@ export class Episode {
     return validateNotUndefined<IPageDataEpisode>(response);
   }
 
-  public async getAllPagesPromise(): Promise<IPageDataEpisode[]> {
-    const pages = await this.getPageNumberPromise();
+  public async getAllPagesPromise(){
+    const pages: number = await this.getPageNumberPromise();
     let arrPag = [];
 
     for (let i = 1; i <= pages; i++) {

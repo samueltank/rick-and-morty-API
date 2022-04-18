@@ -18,7 +18,9 @@ const applyEpisodeList = async function (selector) {
         }
     }
 };
-await applyEpisodeList(".episode-select");
+{
+    await applyEpisodeList(".opt-group");
+}
 // criação dos cards:
 // pegar número do episodeo pela string query:
 const getEpisodeByQuery = function () {
@@ -93,7 +95,7 @@ const applyCard = async function () {
     });
 };
 await applyCard();
-// alterar o número do episódio no título da página:
+// alterar o número do episódio:
 const applyEpisodeNumber = () => {
     const title = document.querySelector(".main-content > .title-main-content");
     if (title != null) {
@@ -101,28 +103,3 @@ const applyEpisodeNumber = () => {
     }
 };
 applyEpisodeNumber();
-function openPageBySelect(nbSelect, el) {
-    const element = el(".episode-select");
-    const index = nbSelect(element);
-}
-function getSelectValue(el) {
-    const value = el.options[el.selectedIndex].value;
-    console.log(value);
-    if (value != null) {
-        return value;
-    }
-    else {
-        throw new Error("Variável vazia!");
-    }
-}
-function getElement(elmClass) {
-    const element = document.querySelector(elmClass);
-    if (element != null) {
-        return element;
-    }
-    else {
-        throw new Error("A variável está nula ou não é um elemento HTML");
-    }
-}
-// função responsável por abrir a página de acordo com o valor da opt:
-openPageBySelect(getSelectValue, getElement);

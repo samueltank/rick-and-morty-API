@@ -10,11 +10,28 @@ const btnRight: Element | null = document.querySelector(
   ".btn-right"
 );
 
+// scroll ao click:
+let inMotion: boolean = true;
+
+
+
 btnLeft?.addEventListener("click", () => {
-  console.log("clicou esquerda!");
-  container?.scrollBy(-1050, 0);
-});
+  container?.scrollBy(-200, 0);
+}, true);
 btnRight?.addEventListener("click", () => {
   console.log("clicou direita");
-  container?.scrollBy(1050, 0);
+  container?.scrollBy(200, 0);
+});
+
+// scroll ao rolar do rodinha do mouse ou deslizar do dedo:
+container?.addEventListener("wheel", (event) => {
+  
+  console.log(event)
+  if (event.deltaY > 0) {
+    event.preventDefault();
+    container.scrollBy(1000, 0);
+  } else {
+    event.preventDefault();
+    container.scrollBy(-1000, 0);
+  }
 });
