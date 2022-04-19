@@ -103,10 +103,15 @@ const applyEpisodeNumber = () => {
 applyEpisodeNumber();
 function openPageBySelect(nbSelect, el) {
     const element = el(".episode-select");
-    const index = nbSelect(element);
+    element.addEventListener("change", () => {
+        const index = nbSelect(element);
+        window.location.href = `
+    ${window.location.origin}/assets/pages/showcase.html?episode=${index}
+  `;
+    });
 }
-function getSelectValue(el) {
-    const value = el.options[el.selectedIndex].value;
+function getSelectText(el) {
+    const value = el.options[el.selectedIndex].text;
     console.log(value);
     if (value != null) {
         return value;
@@ -125,4 +130,4 @@ function getElement(elmClass) {
     }
 }
 // função responsável por abrir a página de acordo com o valor da opt:
-openPageBySelect(getSelectValue, getElement);
+openPageBySelect(getSelectText, getElement);

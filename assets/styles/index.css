@@ -151,6 +151,9 @@ main {
 }
 
 #btn-go-to > a {
+  width: 100%;
+  height: 100%;
+
   font-size: 40px;
   font-weight: 600;
   color: white;

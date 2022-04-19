@@ -133,13 +133,17 @@ function openPageBySelect(
   el: getElem
 ) { 
   const element = el(".episode-select")
-  const index = nbSelect(element)
 
-  
+  element.addEventListener("change", () => {
+    const index = nbSelect(element)
+    window.location.href = `
+    ${window.location.origin}/assets/pages/showcase.html?episode=${ index }
+  `;
+  });
 }
 
-function getSelectValue(el: HTMLSelectElement): string {
-  const value = el.options[el.selectedIndex].value;
+function getSelectText(el: HTMLSelectElement): string {
+  const value = el.options[el.selectedIndex].text;
 
   console.log(value)
 
@@ -160,4 +164,4 @@ function getElement(elmClass: string): HTMLSelectElement {
 }
 
   // função responsável por abrir a página de acordo com o valor da opt:
-openPageBySelect(getSelectValue, getElement);
+openPageBySelect(getSelectText, getElement);
