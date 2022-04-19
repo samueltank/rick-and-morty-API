@@ -15,7 +15,7 @@
 
   border-radius: 2em;
 
-  background-color: rgba(116, 116, 116, 0.336);;
+  background-color: rgba(116, 116, 116, 0.336);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -54,6 +54,8 @@ section {
 
   position: relative;
 
+  overflow: hidden;
+  
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
