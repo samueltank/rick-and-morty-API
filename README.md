@@ -1,7 +1,5 @@
 # rick-and-morty-API
 
-## Description
-
 Project done to apply concepts about API consumption with native JS resources, by request of professor @fernandoleonid.
 
 ## Access
