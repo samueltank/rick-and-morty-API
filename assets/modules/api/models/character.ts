@@ -51,7 +51,7 @@ export class Character extends Episode {
 
     const arrCharacters = await Promise.all(arrPromise);
 
-    if (arrCharacters != undefined) {
+    if (arrCharacters !== undefined) {
       return arrCharacters;
     } else {
       throw new Error("Não foi possível encontrar os personagens!");

@@ -38,7 +38,7 @@ const checkNull = function (
   prop: string | undefined,
   elem: Icharacter | undefined
 ): string | Icharacter | undefined {
-  if (prop != "") {
+  if (prop !== "") {
     return `type <span>${elem?.type}</span>`;
   } else {
     return "";
@@ -52,10 +52,10 @@ const creatCards = async function () {
   const characters = new Character();
   let arrCards: HTMLElement[];
 
-  if (episode != null) {
+  if (episode !== null) {
     const chars = await characters.getAllCharacters(episode);
 
-    if (chars != undefined) {
+    if (chars !== undefined) {
       arrCards = chars.map((element) => {
         const div: HTMLElement = document.createElement("div");
         div.className = "flip-container";
@@ -116,7 +116,7 @@ await applyCard();
 
 const applyEpisodeNumber = () => {
   const title = document.querySelector(".main-content > .title-main-content");
-  if (title != null) {
+  if (title !== null) {
     title.textContent = `Episode ${getEpisodeByQuery()}`;
   }
 };
@@ -147,7 +147,7 @@ function getSelectText(el: HTMLSelectElement): string {
 
   console.log(value)
 
-  if (value != null) {
+  if (value !== null) {
     return value
   } else {
     throw new Error("Variável vazia!")
@@ -156,7 +156,7 @@ function getSelectText(el: HTMLSelectElement): string {
 
 function getElement(elmClass: string): HTMLSelectElement {
   const element: HTMLSelectElement | null = document.querySelector(elmClass);
-  if (element != null) {
+  if (element !== null) {
     return element;
   } else {
     throw new Error("A variável está nula ou não é um elemento HTML");
