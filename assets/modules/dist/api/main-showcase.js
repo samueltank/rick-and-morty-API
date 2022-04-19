@@ -106,7 +106,7 @@ function openPageBySelect(nbSelect, el) {
     element.addEventListener("change", () => {
         const index = nbSelect(element);
         window.location.href = `
-    ${window.location.origin}/assets/pages/showcase.html?episode=${index}
+    ${window.location.origin}/rick-and-morty-API/assets/pages/showcase.html?episode=${index}
   `;
     });
 }

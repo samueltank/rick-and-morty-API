@@ -32,7 +32,7 @@ function linkThis() {
     const index = this.children[0].textContent;
     console.log(index);
     window.location.href = `
-    ${window.location.origin}/assets/pages/showcase.html?episode=${index}
+    ${window.location.origin}/rick-and-morty-API/assets/pages/showcase.html?episode=${index}
   `;
 }
 const applylinks = function () {
