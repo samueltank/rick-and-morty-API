@@ -10,6 +10,10 @@ To access the project you can either **clone** and open *index.html* from scratc
 
 ![home](/views/home_api.jpg "Homepage view")
 
+---
+
 ![hub](/views/hub_api.jpg "hubpage view")
+
+---
 
 ![showcase](/views/showcase_api.jpg "showcase page view")
